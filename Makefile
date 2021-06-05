@@ -1,8 +1,9 @@
 PKG_CONFIG ?= pkg-config
-LOCALBASE ?= /opt/local
+LOCALBASE ?= /usr/local
 LOCALBASE != if [ -d "$(LOCALBASE)" ]; then echo "$(LOCALBASE)"; \
-	elif [ -d /opt/local	]; then echo /opt/local	;\
-	elif [ -d /usr/pkg	]; then echo /usr/pkg	;\
+	elif [ -d /opt/local ]; then echo /opt/local ;\
+	elif [ -d /usr/pkg   ]; then echo /usr/pkg   ;\
+	elif [ -d /usr/local ]; then echo /usr/local ;\
 	fi
 CFLAGS += -g -O2 -Wall
 CFLAGS += -I/usr/local/include -I$(LOCALBASE)/include
